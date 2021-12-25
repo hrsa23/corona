@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>List Box Test</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testSelect(form) {
+  document.write("শ্রী/শ্রীমতি",(form.name.value)," আপনার Covid-19 ভাইরাস থাকার সম্ভাবনা রয়েছে ",((form.list1.selectedIndex*7.69) + (form.list2.selectedIndex)*7.69 + (form.list3.selectedIndex)*7.69 + (form.list4.selectedIndex)*7.69 ), " % ")
+}
+</SCRIPT>
+<style>
+select { 
+                -webkit-appearance: none; 
+                -moz-appearance: none; 
+                -ms-appearance: none; 
+                appearance: none; 
+                outline: 0; 
+                background: #119c97; 
+                background-image: none; 
+                border:1px solid black; 
+            } 
+            .select { 
+                position: relative; 
+                display: block; 
+                width: 20em; 
+                height: 3em; 
+                line-height: 3; 
+                background: grey; 
+                overflow: hidden; 
+                border-radius: .25em; 
+            } 
+            select { 
+                width: 100%; 
+                height: 100%; 
+                margin: 0; 
+                padding: 0 0 0 .3em; 
+                color: white; 
+                cursor: pointer; 
+            } 
+            select::-ms-expand { 
+                display: none; 
+            }  
+            .select::after { 
+                content: '\25BC'; 
+                position: absolute; 
+                top: 0; 
+                right: 0; 
+                bottom: 0; 
+                padding: 0 1em; 
+                background: #cdd1d0; 
+                pointer-events: none; 
+            } 
+            .select:hover::after { 
+                color: grey; 
+            } 
+              
+            <!-- For different browsers -->
+            .select::after { 
+                -webkit-transition: .25s all ease; 
+                -o-transition: .25s all ease; 
+                transition: .25s all ease; 
+            } 
+html {
+    overflow: auto;
+}
+body {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    padding: 30px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #119c97; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+</style>
+</HEAD>
+<BODY bgcolor="#cfe3de"><font color=#119c97 size=5 font=helvetica>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+আপনার নাম প্রবেশ করুন : <input type="text" name="name" maxlength="30"><hr>
+
+করোনাভাইরাস লক্ষণগুলো:<br>
+1)কাশি<br>
+2)জ্বর<br>
+3)শ্বাসকষ্ট<br>
+4)ইন্দ্রিয় এবং স্বাদ হ্রাস<br><br>
+আপনার কতগুলি লক্ষণ রয়েছে?
+<div class="select"><select name="list1">
+<option>কিছুই না</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select></div>
+<hr>
+MEDICAL CONDITIONS:<BR>
+1)ডায়াবেটিস<br>
+2)হাইপারটেনশন<br>
+3)ফুসফুসের রোগ<br>
+4)হৃদরোগ<br>
+5)কিডনি ডিসঅর্ডার<br>
+HOW MANY OF THE ABOVE HAVE YOU HAD BEFORE?<br><div class="select">
+<SELECT NAME="list2">
+<option>কিছুই না
+<OPTION>1</OPTION>
+<OPTION>2</OPTION>
+<OPTION>3</OPTION>
+<OPTION>4</OPTION>
+<OPTION>5</OPTION>
+
+</SELECT></div><br>
+<hr>
+আপনি গত 30-50 দিনের মধ্যে যে কোনওভাবে আন্তর্জাতিকভাবে ভ্রমণ করেছেন ?<BR><div class="select">
+<select name="list3">
+<option>না
+<option>হ্যাঁ
+</select></div>
+<hr>
+উপযুক্ত বিকল্প চয়ন করুন<br><div class="select">
+<select name="list4">
+<option>কিছুই না</option>
+<option>আমি সম্প্রতি Covid-19এর জন্য ইতিবাচক পরীক্ষা করে এমন ব্যক্তির সাথে কথাবার্তা বা জীবন যাপন করেছি</option>
+<option>আমি একজন স্বাস্থ্যসেবা কর্মী এবং প্রতিরক্ষামূলক গিয়ার ছাড়াই আমি Covid-19 নিশ্চিত হওয়া কেস পরীক্ষা করেছি।</option>
+</select></div><hr><center>
+<INPUT TYPE="button" NAME="button" Value="জমা দিন" onClick="testSelect(this.form)">
+<input type="reset" value="রিসেট">
+
+</FORM>
+</BODY>
+</HTML>

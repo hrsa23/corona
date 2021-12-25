@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>List Box Test</TITLE>
+<style>
+table ,td ,th {
+    border : 1px solid #7a8280 ;
+}
+
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+function testSelect(form) {
+if (form.myInput.value == form.myInput2.value)
+{ 
+document.write(" নমস্কার  শ্রী/শ্রীমতি  ",form.name.value, )
+}
+else
+{
+  alert("পাসওয়ার্ড এবং নিশ্চিত পাসওয়ার্ড মেলে না")
+}
+}
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction2() {
+  var x = document.getElementById("myInput2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</SCRIPT>
+</HEAD>
+<BODY bgcolor=#afe0d4>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+<table>
+<center><tr>
+<th colspan="2"> <font size=5 color=#7a8280 face=courier>লগইন ফরম </font></th></tr>
+</tr>
+<tr>
+<th> <font color="#119c97" size=3  face="helvetica">নাম </font></th> 
+<td><input type="text" name="name" id="name" maxlength="30"></td>
+</tr>
+<tr>
+<th><font color="#119c97" size=3  face="helvetica">পাসওয়ার্ড</font></th>
+<td><input type="password" id="myInput">
+<img src="password.png" height="16" width="16" onclick="myFunction()"><font color="#119c97" face="helvetica">প্রদর্শনী</font></td>
+</tr>
+<tr>
+<th><font color="#119c97" size=3  face="helvetica">কড়ফিরম পাসওয়ার্ড</font></th>
+<td><input type="password" id="myInput2">
+<img src="password.png" height="16" width="16" onclick="myFunction2()"><font color="#119c97" face="helvetica">প্রদর্শনী</font></td>
+</tr>
+<tr>
+<th><INPUT TYPE="button" NAME="button" Value="জমা দিন" onClick="testSelect(this.form)"></th>
+<th><input type="reset" value="রিসেট" name="Reset"></th>
+</tr>
+</table>
+</FORM></center></font>
+</BODY>
+</HTML>

@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>List Box Test</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testSelect(form) {
+  document.write(" Mr./Mrs ",(form.name.value)," THE CHANCES OF YOU HAVING THE COVID-19 VIRUS ARE ",((form.list1.selectedIndex*7.69) + (form.list2.selectedIndex)*7.69 + (form.list3.selectedIndex)*7.69 + (form.list4.selectedIndex)*7.69 ), " % ")
+}
+</SCRIPT>
+<style>
+select { 
+                -webkit-appearance: none; 
+                -moz-appearance: none; 
+                -ms-appearance: none; 
+                appearance: none; 
+                outline: 0; 
+                background: #119c97; 
+                background-image: none; 
+                border:1px solid black; 
+            } 
+            .select { 
+                position: relative; 
+                display: block; 
+                width: 20em; 
+                height: 3em; 
+                line-height: 3; 
+                background: grey; 
+                overflow: hidden; 
+                border-radius: .25em; 
+            } 
+            select { 
+                width: 100%; 
+                height: 100%; 
+                margin: 0; 
+                padding: 0 0 0 .3em; 
+                color: white; 
+                cursor: pointer; 
+            } 
+            select::-ms-expand { 
+                display: none; 
+            }  
+            .select::after { 
+                content: '\25BC'; 
+                position: absolute; 
+                top: 0; 
+                right: 0; 
+                bottom: 0; 
+                padding: 0 1em; 
+                background: #cdd1d0; 
+                pointer-events: none; 
+            } 
+            .select:hover::after { 
+                color: grey; 
+            } 
+              
+            <!-- For different browsers -->
+            .select::after { 
+                -webkit-transition: .25s all ease; 
+                -o-transition: .25s all ease; 
+                transition: .25s all ease; 
+            } 
+html {
+    overflow: auto;
+}
+body {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    padding: 30px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #119c97; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+</style>
+</HEAD>
+<BODY bgcolor="#cfe3de"><font color=#119c97 size=5 font=helvetica>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+ENTER YOUR NAME : <input type="text" name="name" maxlength="30"><hr>
+
+CORONA VIRUS SYMPTOMS:<br>
+1)Cough<br>
+2)Fever<br>
+3)Difficulty in Breathing<br>
+4)Loss of senses and taste<br><br>
+HOW MANY SYMPTOMS STATED ABOVE ARE YOU EXPERIENCING LATELY?
+<div class="select"><select name="list1">
+<option>NONE</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select></div>
+<hr>
+MEDICAL CONDITIONS:<BR>
+1)Diabetes<br>
+2)Hypertension<br>
+3)Lung Disease<br>
+4)Heart Disease<br>
+5)Kidney Disorder<br>
+HOW MANY OF THE ABOVE HAVE YOU HAD BEFORE?<br><div class="select">
+<SELECT NAME="list2">
+<option>NONE
+<OPTION>1</OPTION>
+<OPTION>2</OPTION>
+<OPTION>3</OPTION>
+<OPTION>4</OPTION>
+<OPTION>5</OPTION>
+
+</SELECT></div><br>
+<hr>
+HAVE YOU TRAVELLED ANYWHERE INTERNATIONALLY IN THE LAST 30-50 DAYS<BR><div class="select">
+<select name="list3">
+<option>No
+<option>Yes
+</select></div>
+<hr>
+WHICH OF THE FOLLOWING APPLY TO YOU?<br><div class="select">
+<select name="list4">
+<option>None of the below</option>
+<option>I have recently interacted or lived with someone who has tested positive for Covid-19</option>
+<option>I am a healthcare worker and I examined a Covid-19 confirmed case without protective gear.</option>
+</select></div><hr><center>
+<INPUT TYPE="button" NAME="button" Value="Test" onClick="testSelect(this.form)">
+<input type="reset" value="Reset">
+
+</FORM>
+</BODY>
+</HTML>

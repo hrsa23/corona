@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>List Box Test</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function testSelect(form) {
+  document.write(" श्री/श्रीमती ",(form.name.value)," Covid-19 से संक्रमित होने की आपकी संभावना है",((form.list1.selectedIndex*7.69) + (form.list2.selectedIndex)*7.69 + (form.list3.selectedIndex)*7.69 + (form.list4.selectedIndex)*7.69 ), " % ")
+}
+</SCRIPT>
+<style>
+select { 
+                -webkit-appearance: none; 
+                -moz-appearance: none; 
+                -ms-appearance: none; 
+                appearance: none; 
+                outline: 0; 
+                background: #119c97; 
+                background-image: none; 
+                border:1px solid black; 
+            } 
+            .select { 
+                position: relative; 
+                display: block; 
+                width: 20em; 
+                height: 3em; 
+                line-height: 3; 
+                background: grey; 
+                overflow: hidden; 
+                border-radius: .25em; 
+            } 
+            select { 
+                width: 100%; 
+                height: 100%; 
+                margin: 0; 
+                padding: 0 0 0 .3em; 
+                color: white; 
+                cursor: pointer; 
+            } 
+            select::-ms-expand { 
+                display: none; 
+            }  
+            .select::after { 
+                content: '\25BC'; 
+                position: absolute; 
+                top: 0; 
+                right: 0; 
+                bottom: 0; 
+                padding: 0 1em; 
+                background: #cdd1d0; 
+                pointer-events: none; 
+            } 
+            .select:hover::after { 
+                color: grey; 
+            } 
+              
+            <!-- For different browsers -->
+            .select::after { 
+                -webkit-transition: .25s all ease; 
+                -o-transition: .25s all ease; 
+                transition: .25s all ease; 
+            } 
+html {
+    overflow: auto;
+}
+body {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    padding: 30px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #119c97; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+</style>
+</HEAD>
+<BODY bgcolor="#cfe3de"><font color=#119c97 size=5 font=helvetica>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+अपना नाम दर्ज करें : <input type="text" name="name" maxlength="30"><hr>
+
+कोरोनावाइरस लक्षण:<br>
+1)खांसी<br>
+2)बुखार<br>
+3)सांस लेने में कठिनाई<br>
+4)इंद्रियों और स्वाद की हानि<br><br>
+आप इनमें से कितने लक्षण अनुभव कर रहे है?
+<div class="select"><select name="list1">
+<option>कोई नहीं</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select></div>
+<hr>
+चिकित्सा संबंधी बीमारियाँ<BR>
+1)मधुमेह<br>
+2)उच्च रक्तचाप<br>
+3)फेफड़ों की बीमारी<br>
+4)दिल की बीमारी<br>
+5)गुर्दा विकार<br>
+इनमें से आपको कितने रोग है या थे?<br><div class="select">
+<SELECT NAME="list2">
+<option>कोई नहीं
+<OPTION>1</OPTION>
+<OPTION>2</OPTION>
+<OPTION>3</OPTION>
+<OPTION>4</OPTION>
+<OPTION>5</OPTION>
+
+</SELECT></div><br>
+<hr>
+आपने 30-50 दिनों में किसी भी तरह की आंतरिक यात्रा की?<BR><div class="select">
+<select name="list3">
+<option>नहीं
+<option>हाँ
+</select></div>
+<hr>
+इनमे से कितने विकल्प आपके लिए लागु होते है?<br><div class="select">
+<select name="list4">
+<option>इनमे से कोई भी नहीं</option>
+<option>मैंने हाल ही में कोविद -19 के लिए सकारात्मक परीक्षण करने वाले किसी व्यक्ति के साथ बातचीत की है या रह रहा है</option>
+<option>मैं एक स्वास्थ्यकर्मी हूं और मैंने सुरक्षात्मक गियर के बिना कोविद -19 पुष्ट मामले की जांच की।</option>
+</select></div><hr><center>
+<INPUT TYPE="button" NAME="button" Value="प्रस्तुत" onClick="testSelect(this.form)">
+<input type="reset" value="रीसेट">
+
+</FORM>
+</BODY>
+</HTML>
